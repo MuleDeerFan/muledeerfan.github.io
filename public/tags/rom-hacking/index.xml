@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rom-Hacking on DeerTopia</title>
+    <link>http://localhost:1313/tags/rom-hacking/</link>
+    <description>Recent content in Rom-Hacking on DeerTopia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Sep 2023 00:00:01 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/rom-hacking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pokémon Red Disassembly: Modifying The Starters</title>
+      <link>http://localhost:1313/posts/pokered-starters/</link>
+      <pubDate>Thu, 14 Sep 2023 00:00:01 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/pokered-starters/</guid>
+      
+      <description>&lt;p&gt;This is a guide I originally wrote back in 2015 for an Italian Pokémon ROM hacking forum because nobody else had done so already, I thought I would translate and archive it here too since this site is meant to be a place for me to backup my work, old or new, I hope it can be useful even for just one curious soul who ever asked themselves: how can you change the three starters in pokered? Well, here is how.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

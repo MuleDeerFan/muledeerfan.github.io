@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DeerTopia</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on DeerTopia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 May 2025 01:24:07 +0200</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hacking The Pokedex in Pokemon Gold, Silver, Crysyal</title>
+      <link>http://localhost:1313/posts/hacking-gsc-pokedex/</link>
+      <pubDate>Mon, 19 May 2025 01:24:07 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/hacking-gsc-pokedex/</guid>
+      
+      <description>&lt;p&gt;Notes on this topic were buried on my hard drive for years now, and rather than making all the work that led to these notes go to waste I am going to share them in the hope that someone finds them useful, even if by today this is all quite outdated thanks to the disassemblies of &lt;a href=&#34;https://github.com/pret/pokegold&#34;&gt;Gold&lt;/a&gt; and &lt;a href=&#34;https://github.com/pret/pokecrystal&#34;&gt;Crystal&lt;/a&gt;, so this is more like a documentation kind of post, explaining how the Pokèdex data is stored in these games and how to change it manually without having to re-compile the ROM.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Pokemon Red Disassembly: Changing the Starters</title>
+      <link>http://localhost:1313/posts/pokered-starters/</link>
+      <pubDate>Mon, 19 May 2025 01:23:58 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/pokered-starters/</guid>
+      
+      <description>&lt;p&gt;This is a guide I originally wrote back in 2015 for an Italian Pokémon ROM hacking forum because nobody else had done so already, I thought I would translate and archive it here too since this site is meant to be a place for me to backup my work, old or new, I hope it can be useful even for just one curious soul who ever asked themselves: how can you change the three starters in pokered? Well, here is how.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Gameboy Pointers and How To Repoint Them</title>
+      <link>http://localhost:1313/posts/gameboy-pointers/</link>
+      <pubDate>Mon, 19 May 2025 01:23:50 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/gameboy-pointers/</guid>
+      
+      <description>&lt;h2 id=&#34;pointers&#34;&gt;Pointers?&lt;/h2&gt;
+&lt;p&gt;If you have done some C or C++ programming you most likely already know what a pointer is and what it&amp;rsquo;s used for, but not everyone has such a background so I&amp;rsquo;m going to spend a few minutes talking about them from a very basic level, you can skip this section if you are already familiar with them.&lt;/p&gt;
+&lt;p&gt;Pointers are essentially variables, in programming variables are often seen as boxes with a label and some arbitrary content. The label on the box represents the name of the variable, so the alias that programmers use to refer to it while writing code, and the content can vary a lot depending on the kind of variable, languages like C are very strict on the concept of types and the programmer must define one for each variable they create, but others like Python are more flexible and can detect by themselves how to treat a variable based on what the programmers put into them.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Welcome to Deertopia</title>
+      <link>http://localhost:1313/posts/welcome-to-deertopia/</link>
+      <pubDate>Mon, 19 May 2025 01:22:47 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/welcome-to-deertopia/</guid>
+      
+      <description>&lt;p&gt;This is Deertopia. It is a place for me and other fellow deer enthusiasts to rejoice in the glory and might of the most beautiful two-toed ungulates in existence: the DEER.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/deertopia.png&#34; alt=&#34;deertopia.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Sometimes I post stupid deer memes my friend and I make, other times I just write about ROM hacking, game modding, or whatever other topics I get obsessed with on a specific day.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

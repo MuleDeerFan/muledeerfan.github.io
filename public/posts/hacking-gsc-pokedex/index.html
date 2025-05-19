@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Hacking The Pokedex in Pokemon Gold, Silver, Crysyal | DeerTopia</title>
+<meta property="og:title" content="Hacking The Pokedex in Pokemon Gold, Silver, Crysyal | DeerTopia" />
+<meta name="twitter:title" content="Hacking The Pokedex in Pokemon Gold, Silver, Crysyal | DeerTopia" />
+<meta itemprop="name" content="Hacking The Pokedex in Pokemon Gold, Silver, Crysyal | DeerTopia" />
+<meta name="application-name" content="Hacking The Pokedex in Pokemon Gold, Silver, Crysyal | DeerTopia" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/posts/hacking-gsc-pokedex/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-05-19T01:24:07&#43;0200 />
+    <meta property="article:published_time" content=2025-05-19T01:24:07&#43;0200 />
+    <meta property="og:url" content="http://localhost:1313/posts/hacking-gsc-pokedex/" />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Hacking The Pokedex in Pokemon Gold, Silver, Crysyal",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-05-19",
+        "description": "",
+        "wordCount":  2622 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-05-19",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "DeerTopia"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.147.3">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/hacking-gsc-pokedex/">
+  <meta property="og:site_name" content="DeerTopia">
+  <meta property="og:title" content="Hacking The Pokedex in Pokemon Gold, Silver, Crysyal">
+  <meta property="og:description" content="Notes on this topic were buried on my hard drive for years now, and rather than making all the work that led to these notes go to waste I am going to share them in the hope that someone finds them useful, even if by today this is all quite outdated thanks to the disassemblies of Gold and Crystal, so this is more like a documentation kind of post, explaining how the Pokèdex data is stored in these games and how to change it manually without having to re-compile the ROM.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-19T01:24:07+02:00">
+    <meta property="article:modified_time" content="2025-05-19T01:24:07+02:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hacking The Pokedex in Pokemon Gold, Silver, Crysyal">
+  <meta name="twitter:description" content="Notes on this topic were buried on my hard drive for years now, and rather than making all the work that led to these notes go to waste I am going to share them in the hope that someone finds them useful, even if by today this is all quite outdated thanks to the disassemblies of Gold and Crystal, so this is more like a documentation kind of post, explaining how the Pokèdex data is stored in these games and how to change it manually without having to re-compile the ROM.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/hacking-gsc-pokedex/">
+    <link href="/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Hacking The Pokedex in Pokemon Gold, Silver, Crysyal</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-05-19T01:24:07&#43;02:00" itemprop="datePublished"> May 19, 2025 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <p>Notes on this topic were buried on my hard drive for years now, and rather than making all the work that led to these notes go to waste I am going to share them in the hope that someone finds them useful, even if by today this is all quite outdated thanks to the disassemblies of <a href="https://github.com/pret/pokegold">Gold</a> and <a href="https://github.com/pret/pokecrystal">Crystal</a>, so this is more like a documentation kind of post, explaining how the Pokèdex data is stored in these games and how to change it manually without having to re-compile the ROM.</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>A decent hex editor with standard features (goto, search), possibly one designed with ROM hacking in mind in order to import .tbl table files</li>
+<li>An original ROM of either Gold, Silver, Crystal (remember kids, always dump your own ROM&rsquo;s if you want to stay legal!)</li>
+<li>Being familiar with hex editing</li>
+<li>Knowing <a href="/post/gb-pointers/">how to repoint GameBoy pointers</a></li>
+<li>Familiarity with the GameBoy&rsquo;s Assembly language is recommended but not mandatory</li>
+</ul>
+<p>The choice of the ROM is irrelevant because nothing changes between one or the other except for the addresses in memory of what we are interested in, and I got you covered anyway because I happen to have a list of offsets for every version. For most examples I will be using a ROM of Pokèmon Crystal.</p>
+<hr>
+<h2 id="where-is-the-juice-at">Where is the juice at?</h2>
+<p>Pokèdex data is just like most data structures in GameBoy games, it&rsquo;s divided in two parts:</p>
+<ul>
+<li>A list of the actual Pokèdex data of each Pokèmon, saved one after the other somewhere in the ROM</li>
+<li>A pointer table pointing at each one of the elements of the list</li>
+</ul>
+<p>Pointers and data are saved in different memory locations, not only that, but the list of actual data (not the pointers!) is split in four smaller lists each in a different ROM bank. These are the addresses for Gold and Silver:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"><strong>Data Address</strong></th>
+          <th style="text-align: center"><strong>Bank Number</strong></th>
+          <th style="text-align: center"><strong>Base Address</strong></th>
+          <th style="text-align: center"><strong>Range</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">0x1A0000</td>
+          <td style="text-align: center">0x68</td>
+          <td style="text-align: center">0x1A0000</td>
+          <td style="text-align: center">1 - 64</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0x1A4000</td>
+          <td style="text-align: center">0x69</td>
+          <td style="text-align: center">0x1A4000</td>
+          <td style="text-align: center">65 - 128</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0x1A8000</td>
+          <td style="text-align: center">0x6A</td>
+          <td style="text-align: center">0x1A8000</td>
+          <td style="text-align: center">129 - 192</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0x1AC000</td>
+          <td style="text-align: center">0x6B</td>
+          <td style="text-align: center">0x1AC000</td>
+          <td style="text-align: center">193 - 251</td>
+      </tr>
+  </tbody>
+</table>
+<p>And these for Crystal:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"><strong>Data Address</strong></th>
+          <th style="text-align: center"><strong>Bank Number</strong></th>
+          <th style="text-align: center"><strong>Base Address</strong></th>
+          <th style="text-align: center"><strong>Range</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">0x181695</td>
+          <td style="text-align: center">0x60</td>
+          <td style="text-align: center">0x180000</td>
+          <td style="text-align: center">1 - 64</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0x1B8000</td>
+          <td style="text-align: center">0x6E</td>
+          <td style="text-align: center">0x1B8000</td>
+          <td style="text-align: center">65 - 128</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0x1CC000</td>
+          <td style="text-align: center">0x73</td>
+          <td style="text-align: center">0x1CC000</td>
+          <td style="text-align: center">129 - 192</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0x1D0000</td>
+          <td style="text-align: center">0x74</td>
+          <td style="text-align: center">0x1D0000</td>
+          <td style="text-align: center">193 - 251</td>
+      </tr>
+  </tbody>
+</table>
+<p>To see how this data looks like you can use a hex editor, but in order to read the text you also need a table file to correctly encode the in-game text, since different games adopt different text encodings.</p>
+<p>You can find a table file (.tbl) for Gold Silver and Crystal on <a href="https://datacrystal.romhacking.net/wiki/Pok%C3%A9mon_Gold_and_Silver:TBL">DataCrystal</a> and import it on hex editors that support this feature such as <a href="https://www.romhacking.net/utilities/291/">WindHex</a>, <a href="https://www.romhacking.net/utilities/204/">GoldFinger</a>, <a href="https://www.romhacking.net/utilities/206/">HexeCute</a>, and other ones that were developed specifically for ROM hacking.</p>
+<p>Here is how the beginning of the Pokèdex data looks like in Gold:</p>
+<p><img src="/images/pokedex-gsc/1.png" alt="img"></p>
+<p>And here it is in Crystal:</p>
+<p><img src="/images/pokedex-gsc/3.png" alt="img"></p>
+<p>As I said each one of the elements of the list of Pokèdex entries has a pointer telling the game where said entry is in the ROM, so if you need to edit one of the entries and you risk of overflowing into the next one you can repoint the entry&rsquo;s pointer to make it look for the data at a different address, one where you have more space to work with.</p>
+<p>Unlike the actual data, pointers are all stored in a single pointer table:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"><strong>Game</strong></th>
+          <th style="text-align: center"><strong>Offset</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Gold / Silver</td>
+          <td style="text-align: center">0x44360</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Crystal</td>
+          <td style="text-align: center">0x44378</td>
+      </tr>
+  </tbody>
+</table>
+<p>You can tell you are in a pointer table when you notice a pattern like this (picture from the ROM of Gold):</p>
+<p><img src="/images/pokedex-gsc/2.png" alt="img"></p>
+<p>In Crystal the pointers are different but the pattern is pretty much the same:</p>
+<p><img src="/images/pokedex-gsc/4.png" alt="img"></p>
+<p>The second byte of every 2-bytes long pointer repeats itself a couple times before being incremented, while the first changes every time.</p>
+<p>You can easily calculate the location in memory of your desired Pokèmon&rsquo;s Pokèdex entry pointer from its Pokèdex number with the formula:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"><strong>Game</strong></th>
+          <th style="text-align: center"><strong>Formula</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Gold / Silver</td>
+          <td style="text-align: center">0x4435E + (2 * N)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Crystal</td>
+          <td style="text-align: center">0x44376 + (2 * N)</td>
+      </tr>
+  </tbody>
+</table>
+<p>Where <em>N</em> is of course the Pokèdex number of your interest.</p>
+<hr>
+<h2 id="a-couple-unnecessary-thoughts">A couple unnecessary thoughts</h2>
+<p>This section is absolutely optional, here I just show some ASM code and talk a bit about the complications of wanting to expand the Pokèdex by big numbers, so if you&rsquo;re only interested in the data structure of Pokèdex entries you can skip this part altogether.</p>
+<p>Now let&rsquo;s assume you wanted to move some of this Pokèdex data somewhere else, in another bank. Or perhaps you want to add a fifth bank because you are adding more Pokèmon to the game and so you want all of them to have their own Pokèdex entries, you&rsquo;re soon going to run out of free space in the fourth dedicated bank the developers originally dedicated to Pokèdex entries.</p>
+<p>How would you tell the game where to look for the data now that it&rsquo;s not in the original location anymore? Let&rsquo;s investigate.</p>
+<p>The Assembly routines responsible for calculating the pointer of a Pokèmon&rsquo;s Pokèdex data is at 0x44326 for G/S and 0x44333 for Crystal, here is the latter, heavily commented to make it comprehensible for those not too familiar with ASM:</p>
+<pre tabindex="0"><code class="language-gameboy" data-lang="gameboy">#org 44333
+E5			push hl			; save HL on the stack
+21 78 42	ld hl,4378		; load the address of the pokèdex data pointer table into HL
+78			ld a,b			; A = B = number of the pokèmon we&#39;re interested in
+3D			dec a			; A--, the pokèdex counts from 1 but tables start from 0
+16 00		ld d,00			; D = 0, it prepares it for the following 16 bits addition so that it doesn&#39;t influence the result
+5F			ld e,a			; E = A
+19			add hl,de		; HL = (baseOffset + index)
+19			add hl,de		; because pointers are two bytes long the addition is done twice, and the correct address is found
+5E			ld e,(hl)		; E = first byte of the pointer
+23			inc hl			; increment HL to access the second byte
+56			ld d,(hl)		; which is then loaded into D
+D5			push de			; save DE on the stack so that the registers can be used for the next calculations too
+07			rlca			; rotate A to the left
+07			rlca			; do it once more
+E6 03		and a,03		; A = A &amp; 3, this is used to obtain the index value for the list of banks
+21 51 43	ld hl,4351		; load the list of ROM banks in HL
+16 00		ld d,00			; once again D is initialized for the 16 bits addition
+5F			ld e,a			; E now contains the result of the logical operation
+19			add hl,de		; and it&#39;s used as index for the list of banks to obtain the address of the correct bank, which is stored into HL
+46			ld b,(hl)		; and then the bank number itself is placed into B
+D1			pop de			; the value of the pointer calculated previously is also retrieved from the stack and placed into DE
+E1			pop hl			; retrieve the last value from the stack
+C9			ret				; return to callee
+</code></pre><p>For Gold and Silver the routine is very similar although not identical:</p>
+<pre tabindex="0"><code class="language-gameboy" data-lang="gameboy">#org 44326
+E5			push hl			; save HL on the stack
+21 60 43	ld hl,4360		; load the address of the pokèdex data pointer table into HL
+78			ld a,b			; B = A = number of the pokèmon we&#39;re interested in
+3D			dec a			; A--, the pokèdex counts from 1 but tables start from 0
+16 00		ld d,00			; D = 0, it prepares it for the following 16 bits addition so that it doesn&#39;t influence the result
+5F			ld e,a			; E = A
+19			add hl,de		; HL = (baseOffset + index)
+19			add hl,de		; because pointers are two bytes long the addition is done twice, and the correct address is found
+5E			ld e,(hl)		; E = first byte of the pointer
+23			inc hl			; increment HL to access the second byte
+56			ld d,(hl)		; which is then loaded into D
+07			rlca			; rotate A to the left
+07			rlca			; do it once more
+E6 03		and a,03		; A = A &amp; 3, this is used to obtain the index value for the list of banks
+C6 68		add a,68		; add the number of the first bank containing the pokèdex data to the result of the previous operation, the result is the correct bank number
+47			ld b,a			; which is saved into B
+E1			pop hl			; the stack is restored to its previous state
+C9			ret				; and the routine ends
+</code></pre><p>Both routines return a value like this: B:DE, where B is the bank number and DE contains the 2 bytes long pointer that contains an address relative to a bank, these two together make an absolute address:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">dataAddress = (bankNumber * 0x4000) + ([reversedPointer] - 0x4000)
+</code></pre><p>Unlike in Crystal, the four ROM banks containing Pokèdex data are one after the other in Gold and Silver, so the developers hardcded the first bank number in the ASM routine and used a simple addition:</p>
+<pre tabindex="0"><code class="language-gameboy" data-lang="gameboy">rlca
+rlca
+and a,03
+add a,68
+</code></pre><p>In Crystal however the pokèdex banks aren&rsquo;t contiguous, so the approach was slightly different: the banks containing pokèdex data are saved into an array, which we find just after the end of the routine:</p>
+<p><img src="/images/pokedex-gsc/6.png" alt="img"></p>
+<p>Followed by the callee of the routine we have just examined:</p>
+<pre tabindex="0"><code class="language-gameboy" data-lang="gameboy">#org 44355
+CD 33 43	call $4333		; call the routine above to obtain the address of the pokèdex data
+</code></pre><p>I&rsquo;m not going to show the rest of this function because there are a couple details I&rsquo;m not so sure of, so instead of leaving information blank I&rsquo;m not showing it altogether, the address is there though so if you want to give it a look yourself go ahead.</p>
+<p>Anyway, I am pointing this out because while reading the code for the first function I noticed that the logical operation effectively hardcodes the number of banks inside which the data is distributed:</p>
+<pre tabindex="0"><code class="language-gameboy" data-lang="gameboy">E6 03		and a,03
+</code></pre><p>This means one would need to rewrite this function if they were to add more Pokèdex entries than the last officially used bank allows for, and there is no free room after this function, it goes straight to the bank numbers and then to the next function, so repointing would be needed, the repointing would have to take place at 0x44356 to be exact, equivalent to the first byte of the green rectangle in the below picture:</p>
+<p><img src="/images/pokedex-gsc/7.png" alt="img"></p>
+<p>Luckily the 17th bank (0x11), the one where all this code is in, has a lot of empty space at the bottom so repointing should be easy if you write your new Assembly routine there:</p>
+<p><img src="/images/pokedex-gsc/8.png" alt="img"></p>
+<p>You have 934 available free bytes in this bank, it&rsquo;s way more than you need for a single routine.</p>
+<p><em>Small note: maybe changing that instruction to &ldquo;and a,numberOfBanks&rdquo; and repointing the array of banks somewhere else to add more entries to it is really all one needs to do as first step to expand the Pokèdex? I might look more into this, however this can only be achieved on Crystal, because the routine in Gold assumes all entries are stored in contiguous banks, and the ones after the fourth bank are already occupied. Luckily, the disassembly of Pokèmon Gold seems to have adopted Crystal&rsquo;s approach as well, using an array instead of a simple addition</em></p>
+<p>This is not everything you would need to do in order to add a fifth bank of Pokèdex entries, looking at the disassembly I spotted lines like this:</p>
+<pre tabindex="0"><code class="language-gameboy" data-lang="gameboy">ld bc, wPokedexDataEnd - wPokedexDataStart
+</code></pre><p>That wPokedexDataEnd is of course a variable somewhere in the ROM that needs to be changed, and this is just one, the full code handling the Pokèdex is quite long so I didn&rsquo;t bother going through the whole thing to identify what would need to be changed (since it never was the scope of this post), but I thought it would be fair to mention it in case anyone reading this was interested in adding <em>a lot</em> of new Pokèmon in their hack. If you want to see the code it&rsquo;s <a href="https://github.com/pret/pokecrystal/tree/master/engine/pokedex">here</a>.</p>
+<p>If anybody has done it, I would be very interested to see how they did it.</p>
+<hr>
+<h2 id="data-structure">Data structure</h2>
+<p>After all that rambling let&rsquo;s take a close look at how the game stores the data we needed so much time to locate:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> dexEntry {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> name[];
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">uint16_t</span> height;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">uint16_t</span> weight;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">char</span> description[];
+</span></span><span style="display:flex;"><span>} pokedexEntry;
+</span></span></code></pre></div><p>As usual let&rsquo;s take Bulbasaur as an example to see the data structure with a hex editor:</p>
+<p><img src="/images/pokedex-gsc/9.png" alt="img"></p>
+<p><strong>Name, description:</strong></p>
+<p><em>name</em> and <em>description</em> can have various sizes as long as a few rules are respected:</p>
+<ul>
+<li><em>name</em> isn&rsquo;t actually the Pokèmon&rsquo;s name, it&rsquo;s the Pokèmon&rsquo;s species, for example Bulbasaur is the SEED Pokèmon;</li>
+<li><em>name</em> can only hold up to 10 characters, it requires a trailing 0x50 string terminator byte (example: Squirtle &ndash;&gt; TINYTURTLE[0x50])</li>
+<li><em>description</em> has to be split in two different pages, each of up to 51 characters including line breaks</li>
+<li>every page can only have up to three lines</li>
+<li>a single line in <em>description</em> can be up to 18 bytes long, including line breaks</li>
+</ul>
+<p>For the <em>description</em> field you also have to keep in mind you have to write text following the game&rsquo;s own encoding, so make sure you have loaded the correct .tbl file and that you are in text editing mode when doing this.</p>
+<p>In addition you have to use these two special characters:</p>
+<ul>
+<li>0x4E = line break</li>
+<li>0x50 = terminate names, end page</li>
+</ul>
+<p>For example the original description of Bulbasaur in Pokèmon Crystal is formatted as follows:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">While it is young,[0x4E]
+it uses the[0x4E]
+nutrients that are[0x50]
+stored in the[0x4E]
+seeds on its back[0x4E]
+in order to grow.[0x50]
+</code></pre><p><strong>Height, weight:</strong></p>
+<p>This is the only part that is going to be a little confusing, the way height and weight are stored isn&rsquo;t the most intuitive. Here&rsquo;s how to retrieve the original values from the 16 bits values taken from the ROM:</p>
+<ul>
+<li>Flip the two bytes (the GameBoy&rsquo;s CPU follows the little endian standard)</li>
+<li>Convert the 16 bits value to base 10 as a whole</li>
+<li>If calculating height, count the last two digits as decimal. If calculating weight, count only the very last</li>
+</ul>
+<p>Let&rsquo;s try to get Onix&rsquo;s height back:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">1) FA 0A
+2) 0A FA
+3) 0AFA
+4) 2810
+---------
+5) 28.10
+</code></pre><p>And for its weight:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">1) 16 12
+2) 12 16
+3) 1216
+4) 4630
+---------
+5) 463.0
+</code></pre><p>We can confirm the calculations are correct:</p>
+<p><img src="/images/pokedex-gsc/10.png" alt="img"></p>
+<p>Let&rsquo;s make a test going the other way, starting from a new arbitrary value for both height and weight to overwrite the originals.</p>
+<p>Suppose we want to give Onix a height of 6.66 and a weight of 133.7, remembering that height must always have two decimal digits and weight only one:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">1) 6.66
+2) 666
+3) 029A
+4) 02 9A
+---------
+5) 9A 02
+</code></pre><p>And for the weight:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">1) 133.7
+2) 1337
+3) 0539
+4) 05 39
+---------
+5) 39 05
+</code></pre><p>Let&rsquo;s see if the values are correct:</p>
+<p><img src="/images/pokedex-gsc/11.png" alt="img"></p>
+<hr>
+<p>And with this the post is over. I might make a part two where I actually go into detail on how to expand the Pokèdex directly from the ROM and then maybe from the disassembly too, but it&rsquo;s going to require time, a lot of time, mainly because I have never tried it before and so I will need a lot of research and testing to do.</p>
+<p>If I do end up making more research on this topic you&rsquo;ll see a link pointing to part two, but for now I&rsquo;ll keep focusing on dumping old personal notes and expanding on those.</p>
+<p>Thank you for reading this far!</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+</div>
+    <small class="footer_copyright">
+        © 2025 .
+        
+    </small>
+</footer>
+
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

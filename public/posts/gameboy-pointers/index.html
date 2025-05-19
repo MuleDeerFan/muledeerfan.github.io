@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Gameboy Pointers and How To Repoint Them | DeerTopia</title>
+<meta property="og:title" content="Gameboy Pointers and How To Repoint Them | DeerTopia" />
+<meta name="twitter:title" content="Gameboy Pointers and How To Repoint Them | DeerTopia" />
+<meta itemprop="name" content="Gameboy Pointers and How To Repoint Them | DeerTopia" />
+<meta name="application-name" content="Gameboy Pointers and How To Repoint Them | DeerTopia" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/posts/gameboy-pointers/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-05-19T01:23:50&#43;0200 />
+    <meta property="article:published_time" content=2025-05-19T01:23:50&#43;0200 />
+    <meta property="og:url" content="http://localhost:1313/posts/gameboy-pointers/" />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Gameboy Pointers and How To Repoint Them",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-05-19",
+        "description": "",
+        "wordCount":  1775 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-05-19",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "DeerTopia"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.147.3">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/gameboy-pointers/">
+  <meta property="og:site_name" content="DeerTopia">
+  <meta property="og:title" content="Gameboy Pointers and How To Repoint Them">
+  <meta property="og:description" content="Pointers? If you have done some C or C&#43;&#43; programming you most likely already know what a pointer is and what it’s used for, but not everyone has such a background so I’m going to spend a few minutes talking about them from a very basic level, you can skip this section if you are already familiar with them.
+Pointers are essentially variables, in programming variables are often seen as boxes with a label and some arbitrary content. The label on the box represents the name of the variable, so the alias that programmers use to refer to it while writing code, and the content can vary a lot depending on the kind of variable, languages like C are very strict on the concept of types and the programmer must define one for each variable they create, but others like Python are more flexible and can detect by themselves how to treat a variable based on what the programmers put into them.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-19T01:23:50+02:00">
+    <meta property="article:modified_time" content="2025-05-19T01:23:50+02:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Gameboy Pointers and How To Repoint Them">
+  <meta name="twitter:description" content="Pointers? If you have done some C or C&#43;&#43; programming you most likely already know what a pointer is and what it’s used for, but not everyone has such a background so I’m going to spend a few minutes talking about them from a very basic level, you can skip this section if you are already familiar with them.
+Pointers are essentially variables, in programming variables are often seen as boxes with a label and some arbitrary content. The label on the box represents the name of the variable, so the alias that programmers use to refer to it while writing code, and the content can vary a lot depending on the kind of variable, languages like C are very strict on the concept of types and the programmer must define one for each variable they create, but others like Python are more flexible and can detect by themselves how to treat a variable based on what the programmers put into them.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/gameboy-pointers/">
+    <link href="/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Gameboy Pointers and How To Repoint Them</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-05-19T01:23:50&#43;02:00" itemprop="datePublished"> May 19, 2025 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <h2 id="pointers">Pointers?</h2>
+<p>If you have done some C or C++ programming you most likely already know what a pointer is and what it&rsquo;s used for, but not everyone has such a background so I&rsquo;m going to spend a few minutes talking about them from a very basic level, you can skip this section if you are already familiar with them.</p>
+<p>Pointers are essentially variables, in programming variables are often seen as boxes with a label and some arbitrary content. The label on the box represents the name of the variable, so the alias that programmers use to refer to it while writing code, and the content can vary a lot depending on the kind of variable, languages like C are very strict on the concept of types and the programmer must define one for each variable they create, but others like Python are more flexible and can detect by themselves how to treat a variable based on what the programmers put into them.</p>
+<p>Because they are essentially boxes, variables are used to store data that the program might need later during execution, such data can consist in numbers of various kinds, characters, and all derivates of these, like strings, which in C are nothing but arrays of characters, or decimal numbers, negative numbers, and so on.</p>
+<p>Pointers are a special kind of variable because unlike the rest of them it will not contain some direct data, a pointer will contain the address in memory of some data the programmer will need. Pointers make execution faster and allow programmers to create structures such as tables where data is organized in an easy to access way, making their lives easier when they have to work with the data contained in these tables.</p>
+<p>To make it short, pointers are used to know where data is located in memory, if we want to alter some of that data for our hacking purposes we need to tell the game where this new data is by changing the values of the pointers, this process is called repointing.</p>
+<p><img src="/images/gb-pointers/1.png" alt="img">
+<a href="http://jinsoft.in/1st-semester-engineers-nightmare-pointers-in-c/">(source)</a></p>
+<hr>
+<h2 id="pointers-on-the-gameboy">Pointers on the GameBoy</h2>
+<p>In GameBoy games pointers are often organized in <em>pointer tables</em>, which are areas in memory where different pointers are located, one after the other. These tables are specialized, meaning they all point to different elements of a list or to different structures that are all related to each other between pointers of the same table.</p>
+<p>The reason why they are so important and we are interested in changing these pointers&rsquo; values is that when we go ROM hacking we have some limitations, when we want to alter some data, say for example a script, we can only use the same area in memory the original script uses or else the game wouldn&rsquo;t know where else to find it, and if we accidentally write one byte more than the original script we end up overwriting other data that may belong to another script or other important stuff, so we always have very limited space to work with. But&hellip; what if we told the game to look for the data somewhere else?</p>
+<p>ROMs of GameBoy games are divided into many different sections called <em>ROM banks</em>, each bank is 0x4000 bytes big (0x = <a href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal notation</a>) and the GameBoy&rsquo;s Zilog80 CPU cannot access data located in two different banks at the same time, it needs to do a <em>bank switch</em> first, and at that point the old bank will be inaccessible until the CPU switches back to it.</p>
+<p>We need to know this because usually the game will never use all those 0x4000 bytes in each bank, game programmers used to save data of different kinds on different banks instead of cramming all of it into contiguous spaces, which means we may find scripts in bank 1, maps in bank 2, graphics in bank 3, sounds and music in bank 4, and so on, but of course different developers adopted different strategies.</p>
+<p>This means that banks were rarely completely full, in fact, if we take a look at any GameBoy game with a hex editor we&rsquo;ll find that at the end of many banks there will be a lot of empty room filled with zeros. To verify this, pick a random memory address from any game and use this simple formula:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">bankBaseAddress = (offset / 0x4000) * 0x4000
+</code></pre><p>This calculates the beginning in memory of the desired bank. The division tells us what bank number we are in, and multiplying by 0x4000 gives us the right address of where the bank begins. Do the calculation with a random address picked from any game, jump to it with your hex editor of choice, and take a look at the addresses right <em>before</em> where you landed:</p>
+<p><img src="/images/gb-pointers/2.png" alt="img"></p>
+<p>The red square is memory address 0x8000 inside the ROM of Pokèmon Blue, beginning of the second ROM bank.</p>
+<p>As you can see what preceeds it is a whole lot of zeros, all unused memory we can take advantage of, in fact, this is what repointing is all about, finding unused memory regions where to add our new data which would be too big to just overwrite the original, find the pointer that tells the game where to find the data we&rsquo;re interested in altering, and changing the value of the pointer to make it point to the address where we added our new content.</p>
+<p>Keep in mind though, not every bank has that much free space in it, for example, bank number 3 is much more full and only has a few free bytes at the end:</p>
+<p><img src="/images/gb-pointers/3.png" alt="img"></p>
+<hr>
+<h2 id="repointing">Repointing</h2>
+<p>Luckily for us pointers follow a very specific structure and so it&rsquo;s relatively easy to find where the pointer pointing at a memory address of our interest is located, we cannot calculate their memory address but we can calculate their content, and knowing that pointers are usually located in tables we know a pointer will be adjacent to many others which will look pretty similar, and if the game we are hacking has a <a href="https://datacrystal.romhacking.net/wiki/ROM_map">ROM map</a> available we can look up the desired pointers there.</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">pointer = (offset % 0x4000) + 0x4000
+</code></pre><p>The result will always be two bytes long. Because the GameBoy works in <a href="https://en.wikipedia.org/wiki/Endianness">little endian</a> we must swap the two bytes. For example:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">pointer = (0xD0DF % 0x4000) + 0x4000 = 0x50DF ---&gt; 0x50 0xDF ---&gt; 0xDF 0x50 ---&gt; 0xDF50
+</code></pre><p><em>offset</em> is the memory address of our choice, and the result of this operation (% = mod) returns us the value the pointer we&rsquo;re looking for is holding.</p>
+<p>We can now consult our ROM map of choice to see where the table we&rsquo;re interested in is located, it will give us the base address of the table, so where the first element is located. Navigate to that address and look for the values that were obtained.</p>
+<p>In my example I got that memory address from the wild Pokèmon data in route 1 on Pokèmon Blue, so from the ROM map of the game I found that the Wild Pokèmon data pointers start at 0xCEEB, and sure enough, just a few bytes ahead:</p>
+<p><img src="/images/gb-pointers/4.png" alt="img"></p>
+<p>The red square is address 0xCEEB, beginning of the pointer table, which starts with a bunch of filler values until the first actual entry is met, at address 0xCF03.</p>
+<p>Good, now we have identified the pointer we must work with, now we must calculate the right value to overwrite it with in order to make it point to our new data.</p>
+<p>Remember that the data must be in the same ROM bank as the pointer, unless it&rsquo;s a 3 bytes pointer, which I&rsquo;ll explain later, but those are rarer. To calculate said value we can use the same formula above but with the new address we want to repoint to instead, so if for example I added some data at address 0xE002 I would do:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">newPointer = (0xE002 % 0x4000) + 0x4000 = 0x6002 ---&gt; 0x60 0x02 ---&gt; 0x02 0x60 ---&gt; 0x0260
+</code></pre><p>So I&rsquo;ll have to change DF50 into 0260, and that will tell the game to look for the data in the new location where we added it instead of the old one, which can always be re-used if needed.</p>
+<hr>
+<h2 id="3-bytes-pointers">3 Bytes Pointers</h2>
+<p>Most cartridges for the GameBoy and GameBoy Color have inside an interesting integrated circuit called <a href="http://gbdev.gg8.se/wiki/articles/Memory_Bank_Controllers">Memory Bank Controller</a> (MBC), it&rsquo;s a chip that allowed programmers to have access to more than 32 Kbytes of space (the default storage available in a GB cartridge, since it&rsquo;s the amount of bytes the GameBoy can map in its own RAM) in the cartridge by performing bank switching, effectively giving them the ability to gather data from any bank they wanted regardless of where the code was being executed at that moment. 3 bytes pointers are structured this way:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">[B] [A] [BANK_NUMBER]
+</code></pre><p>It&rsquo;s the same as a two bytes pointer but with an extra byte telling the game in what bank the desired data is located, so at the end of the day nothing really changes, if anything these pointers give us a lot more flexibility because we can repoint them everywhere we want in the ROM, as long as we set the BANK_NUMBER byte properly.</p>
+<p>Note that BANK_NUMBER <em>isn&rsquo;t</em> always located right next to the pointer itself, sometimes it can be a few bytes ahead or before because this third byte is effectively part of an ASM routine telling the GameBoy to switch banks, it&rsquo;s not part of a pointer table.</p>
+<p>If in doubt and if you know what data these pointers are pointing at try calculating the data&rsquo;s bank number and look for that number near the area of the pointers, it&rsquo;s trial and error, but it will work eventually.</p>
+<hr>
+<h2 id="inverse-formula">Inverse Formula</h2>
+<p>If you need to calculate the memory address pointed to by a pointer you have already identified there is another formula that can be used:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">dataAddress = (bankNumber * 0x4000) + (pointer - 0x4000)
+</code></pre><p>This returns an absolute offset to the data pointed at by the pointer, it works with both kinds, 2 and 3 bytes. Remember that when doing this calculation <em>pointer</em> must be switched back to big endian if you&rsquo;re reading its data straight from a hex editor. The bank number can be calculated with a simple division:</p>
+<pre tabindex="0"><code class="language-aaa" data-lang="aaa">bankNumber = address / 0x4000
+</code></pre><hr>
+<p>I think this is enough theory for now. It&rsquo;s more for curious people since there are many pointer calculators nowadays and those make everything a bit easier, but for those who wanted to know how it works behind the scenes, here you have it. I have written my own calculator in C# so if you want to give it a look go ahead, but it&rsquo;s very basic.</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+</div>
+    <small class="footer_copyright">
+        © 2025 .
+        
+    </small>
+</footer>
+
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>
